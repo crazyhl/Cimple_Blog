@@ -1,0 +1,34 @@
+<?php
+
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class CreateCatesPages extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('cate_page', function (Blueprint $table) {
+            $table->integer('cate_id')->unsigned();
+            $table->integer('page_id')->unsigned();
+            $table->foreign('cate_id')->references('id')->on('cates');
+            $table->foreign('page_id')->references('id')->on('pages');
+            $table->primary(['page_id', 'cate_id']);
+
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::drop('cate_page');
+    }
+}
