@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Option;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -14,6 +15,12 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
+        $optionsEq = Option::all();
+        $options = [];
+        foreach ($optionsEq as $option){
+            $options[$option->name] = $option->value;
+        }
+        view()->share('option', $options);
     }
 
     /**

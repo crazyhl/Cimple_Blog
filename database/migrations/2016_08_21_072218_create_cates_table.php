@@ -18,6 +18,7 @@ class CreateCatesTable extends Migration
             $table->string('title')->unique();
             $table->string('description');
             $table->unsignedInteger('count'); // 文章数量
+            $table->unsignedInteger('order')->default(0);
             $table->timestamps();
         });
     }

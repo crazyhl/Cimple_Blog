@@ -1,0 +1,46 @@
+<?php
+namespace App;
+/**
+ * Created by PhpStorm.
+ * User: Chris
+ * Date: 2016/8/21
+ * Time: 20:34
+ */
+
+class AmazeuiThreePresenter extends \Illuminate\Pagination\BootstrapThreePresenter{
+    public function render()
+    {
+        if ($this->hasPages()) {
+            return sprintf(
+                '<ul class="am-pagination">%s %s %s</ul>',
+                $this->getPreviousButton(),
+                $this->getLinks(),
+                $this->getNextButton()
+            );
+        }
+
+        return '';
+    }
+
+    /**
+     * Get HTML wrapper for disabled text.
+     *
+     * @param  string  $text
+     * @return string
+     */
+    protected function getDisabledTextWrapper($text)
+    {
+        return '<li class="am-disabled"><span>'.$text.'</span></li>';
+    }
+
+    /**
+     * Get HTML wrapper for active text.
+     *
+     * @param  string  $text
+     * @return string
+     */
+    protected function getActivePageWrapper($text)
+    {
+        return '<li class="am-active"><span>'.$text.'</span></li>';
+    }
+}
