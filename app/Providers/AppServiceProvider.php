@@ -17,7 +17,7 @@ class AppServiceProvider extends ServiceProvider
         //
         $optionsEq = Option::all();
         $options = [];
-        foreach ($optionsEq as $option){
+        foreach ($optionsEq as $option) {
             $options[$option->name] = $option->value;
         }
         view()->share('option', $options);

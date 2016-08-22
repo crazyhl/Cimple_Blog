@@ -11,7 +11,6 @@ class RelaTableSeeder extends Seeder
      */
     public function run()
     {
-
         \Illuminate\Support\Facades\DB::table('cate_page')->insert([
             'cate_id' => 1,
             'page_id' => 1,
@@ -80,6 +79,5 @@ class RelaTableSeeder extends Seeder
             'cate_id' => 16,
             'page_id' => 17,
         ]);
-
     }
 }

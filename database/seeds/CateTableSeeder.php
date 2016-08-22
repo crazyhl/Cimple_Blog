@@ -12,84 +12,84 @@ class CateTableSeeder extends Seeder
     public function run()
     {
         \App\Cate::create([
-            'title' => '未分类1',
+            'title'       => '未分类1',
             'description' => '',
-            'count' => '1',
+            'count'       => '1',
         ]);
         \App\Cate::create([
-            'title' => '未分类2',
+            'title'       => '未分类2',
             'description' => '',
-            'count' => '1',
+            'count'       => '1',
         ]);
         \App\Cate::create([
-            'title' => '未分类3',
+            'title'       => '未分类3',
             'description' => '',
-            'count' => '1',
+            'count'       => '1',
         ]);
         \App\Cate::create([
-            'title' => '未分类4',
+            'title'       => '未分类4',
             'description' => '',
-            'count' => '1',
+            'count'       => '1',
         ]);
         \App\Cate::create([
-            'title' => '未分类5',
+            'title'       => '未分类5',
             'description' => '',
-            'count' => '1',
+            'count'       => '1',
         ]);
         \App\Cate::create([
-            'title' => '未分类6',
+            'title'       => '未分类6',
             'description' => '',
-            'count' => '1',
+            'count'       => '1',
         ]);
         \App\Cate::create([
-            'title' => '未分类7',
+            'title'       => '未分类7',
             'description' => '',
-            'count' => '1',
+            'count'       => '1',
         ]);
         \App\Cate::create([
-            'title' => '未分类8',
+            'title'       => '未分类8',
             'description' => '',
-            'count' => '1',
+            'count'       => '1',
         ]);
         \App\Cate::create([
-            'title' => '未分类9',
+            'title'       => '未分类9',
             'description' => '',
-            'count' => '1',
+            'count'       => '1',
         ]);
         \App\Cate::create([
-            'title' => '未分类10',
+            'title'       => '未分类10',
             'description' => '',
-            'count' => '1',
+            'count'       => '1',
         ]);
         \App\Cate::create([
-            'title' => '未分类11',
+            'title'       => '未分类11',
             'description' => '',
-            'count' => '1',
+            'count'       => '1',
         ]);
         \App\Cate::create([
-            'title' => '未分类12',
+            'title'       => '未分类12',
             'description' => '',
-            'count' => '1',
+            'count'       => '1',
         ]);
         \App\Cate::create([
-            'title' => '未分类13',
+            'title'       => '未分类13',
             'description' => '',
-            'count' => '1',
+            'count'       => '1',
         ]);
         \App\Cate::create([
-            'title' => '未分类14',
+            'title'       => '未分类14',
             'description' => '',
-            'count' => '1',
+            'count'       => '1',
         ]);
         \App\Cate::create([
-            'title' => '未分类15',
+            'title'       => '未分类15',
             'description' => '',
-            'count' => '1',
+            'count'       => '1',
         ]);
         \App\Cate::create([
-            'title' => '未分类16',
+            'title'       => '未分类16',
             'description' => '',
-            'count' => '1',
+            'count'       => '1',
         ]);
     }
 }
