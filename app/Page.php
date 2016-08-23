@@ -15,17 +15,17 @@ class Page extends Model
      */
     public function scopeArticles($query)
     {
-        return $query->where('type',1)->orderBy('isTop', 'desc')->orderBy('updated_at', 'desc');
+        return $query->where('type', 1)->orderBy('isTop', 'desc')->orderBy('updated_at', 'desc');
     }
 
     /**
-     * 查询所有的文章
+     * 查询所有的文章.
      *
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function scopePages($query)
     {
-        return $query->where('type',2)->orderBy('order', 'desc')->orderBy('id', 'desc');
+        return $query->where('type', 2)->orderBy('order', 'desc')->orderBy('id', 'desc');
     }
 
     /**
