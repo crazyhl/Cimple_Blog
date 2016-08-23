@@ -19,6 +19,16 @@ class Page extends Model
     }
 
     /**
+     * 查询所有的文章
+     *
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopePages($query)
+    {
+        return $query->where('type',2)->orderBy('order', 'desc')->orderBy('id', 'desc');
+    }
+
+    /**
      * 设置用户的名字
      *
      * @param  string  $value

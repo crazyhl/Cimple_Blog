@@ -1,6 +1,6 @@
 <div class="am-form-group">
     <label for="doc-ipt-email-1">标题</label>
-    <input type="text" class="" name="title" id="doc-ipt-email-1" placeholder="标题" value="{{$article->title or ''}}">
+    <input type="text" class="" name="title" id="doc-ipt-email-1" placeholder="标题" value="{{$article->title or old('title')}}">
 </div>
 <div class="am-form-group">
     <label for="doc-select-1" >分类</label>
@@ -23,7 +23,7 @@
 </div>
 <div class="am-form-group">
     <label for="doc-content-1">内容</label>
-    <textarea class="" rows="8" id="doc-content-1" name="content">{{$article->content or ''}}</textarea>
+    <textarea class="" rows="8" id="doc-content-1" name="content">{{$article->content or old('content')}}</textarea>
 </div>
 <div class="am-checkbox">
     <label>
@@ -46,7 +46,7 @@
 </div>
 <div class="am-form-group">
     <label for="doc-ipt-order-1">排序</label>
-    <input type="text" class="" name="order" id="doc-ipt-order-1" placeholder="排序" value="{{$cate->order or 0}}">
+    <input type="text" class="" name="order" id="doc-ipt-order-1" placeholder="排序" value="{{$article->order or old('order')}}">
 </div>
 <div class="am-form-group">
     <label class="am-radio-inline">
