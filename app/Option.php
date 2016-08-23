@@ -6,5 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Option extends Model
 {
+    public $primaryKey = 'name';
     public $timestamps = false;
+
+    protected $fillable = ['name', 'value'];
 }

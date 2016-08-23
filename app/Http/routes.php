@@ -24,4 +24,6 @@ Route::group(['middleware' => 'auth', 'namespace' => 'Admin', 'prefix' => 'admin
     Route::resource('/cate', 'CateController', ['except' => ['show']]);
     Route::resource('/article', 'ArticleController', ['except' => ['show']]);
     Route::resource('/page', 'PageController', ['except' => ['show']]);
+    Route::get('/setting', 'SettingController@index');
+    Route::post('/setting', 'SettingController@store');
 });
