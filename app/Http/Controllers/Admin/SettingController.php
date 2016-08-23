@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Option;
 use Illuminate\Http\Request;
-
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
 
 class SettingController extends Controller
 {
@@ -18,14 +16,15 @@ class SettingController extends Controller
     public function index()
     {
         $title = '系统设置';
+
         return view('admin.setting.index', compact('title'));
     }
-
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
+     *
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -98,5 +97,4 @@ class SettingController extends Controller
 
         return redirect(url('/admin/setting'));
     }
-
 }
