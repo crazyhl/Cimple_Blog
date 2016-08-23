@@ -22,4 +22,5 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout');
 Route::group(['middleware' => 'auth', 'namespace' => 'Admin', 'prefix' => 'admin'], function () {
     Route::get('/', 'IndexController@index');
     Route::resource('/cate', 'CateController', ['except' => ['show']]);
+    Route::resource('/article', 'ArticleController', ['except' => ['show']]);
 });

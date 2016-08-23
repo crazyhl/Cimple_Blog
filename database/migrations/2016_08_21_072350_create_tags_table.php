@@ -15,7 +15,7 @@ class CreateTagsTable extends Migration
         // 标签表
         Schema::create('tags', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title');
+            $table->string('title')->unique();
             $table->unsignedInteger('count');
             $table->timestamps();
         });

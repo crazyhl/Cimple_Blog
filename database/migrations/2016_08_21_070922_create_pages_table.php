@@ -22,6 +22,7 @@ class CreatePagesTable extends Migration
             $table->unsignedTinyInteger('status'); // 状态 1 正常 0 草稿
             $table->unsignedInteger('order')->default(0);
             $table->unsignedTinyInteger('isTop')->default(0);
+            $table->unsignedTinyInteger('isAllowCommet')->default(1); // 是否允许评论
             $table->index('type');
             $table->unique('title');
             $table->timestamps();

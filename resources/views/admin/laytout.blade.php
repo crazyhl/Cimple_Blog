@@ -12,6 +12,7 @@
     <meta name="apple-mobile-web-app-title" content="{{$title}} -- {{$option['TITLE']}}后台管理<" />
     <link rel="stylesheet" href="{{asset('/css/amazeui.min.css')}}"/>
     <link rel="stylesheet" href="{{asset('/css/admin.css')}}">
+    @yield('style')
 </head>
 <body>
 <!--[if lte IE 9]>
@@ -58,5 +59,6 @@
 <!--<![endif]-->
 <script src="{{asset('/js/amazeui.min.js')}}"></script>
 <script src="{{asset('/js/app.js')}}"></script>
+@yield('script')
 </body>
 </html>
