@@ -3,16 +3,12 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Cate;
+use App\Http\Controllers\Controller;
 use App\Option;
 use App\Page;
 use App\Tag;
 use Illuminate\Http\Request;
-
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
-use Michelf\MarkdownExtra;
-use Michelf\SmartyPants;
 
 class ArticleController extends Controller
 {
@@ -40,30 +36,32 @@ class ArticleController extends Controller
         $title = '新建文章';
         $cates = Cate::orderBy('updated_at', 'desc')->get();
         $tags = Tag::all();
+
         return view('admin.article.create', compact('title', 'cates', 'tags'));
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
+     *
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
         $this->validate($request, [
-            'title' => 'required|max:255',
-            'cate' => 'required',
-            'content' => 'required'
+            'title'   => 'required|max:255',
+            'cate'    => 'required',
+            'content' => 'required',
         ]);
         $page = Page::create([
-            'title' => $request->title,
-            'content' => $request->input('content'),
+            'title'         => $request->title,
+            'content'       => $request->input('content'),
             'isAllowCommet' => empty($request->isAllowCommet) ? 0 : 1,
-            'isTop' => empty($request->isTop) ? 0 : 1,
-            'order' => $request->order ?: 0,
-            'status' => $request->status,
-            'type' => 1,
+            'isTop'         => empty($request->isTop) ? 0 : 1,
+            'order'         => $request->order,
+            'status'        => $request->status,
+            'type'          => 1,
         ]);
         foreach ($request->cate as $cate) {
             $c = Cate::find($cate);
@@ -97,7 +95,8 @@ class ArticleController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function edit(Page $article)
@@ -105,22 +104,24 @@ class ArticleController extends Controller
         $title = '编辑文章';
         $cates = Cate::orderBy('updated_at', 'desc')->get();
         $tags = Tag::all();
+
         return view('admin.article.edit', compact('title', 'article', 'cates', 'tags'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int                      $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Page $article)
     {
         $this->validate($request, [
-            'title' => 'required|max:255',
-            'cate' => 'required',
-            'content' => 'required'
+            'title'   => 'required|max:255',
+            'cate'    => 'required',
+            'content' => 'required',
         ]);
         $oldCates = $article->cates()->get();
         $oldTags = $article->tags()->get();
@@ -128,7 +129,7 @@ class ArticleController extends Controller
         $article->content = $request->input('content');
         $article->isAllowCommet = empty($request->isAllowCommet) ? 0 : 1;
         $article->isTop = empty($request->isTop) ? 0 : 1;
-        $article->order = $request->order ?: 0;
+        $article->order = $request->order;
         $article->status = $request->status;
         $article->save();
         DB::table('cate_page')->where('page_id', $article->id)->delete();
@@ -172,15 +173,16 @@ class ArticleController extends Controller
             } else {
                 $oldTag->delete();
             }
-
         }
+
         return redirect(route('admin.article.index'));
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function destroy(Page $article)
