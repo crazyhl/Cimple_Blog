@@ -9,19 +9,20 @@ class Page extends Model
     protected $fillable = ['title', 'description', 'content', 'type', 'status', 'order', 'isTop'];
 
     /**
-     * 查询所有的文章
+     * 查询所有的文章.
      *
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function scopeArticles($query)
     {
-        return $query->where('type',1)->orderBy('isTop', 'desc')->orderBy('updated_at', 'desc');
+        return $query->where('type', 1)->orderBy('isTop', 'desc')->orderBy('updated_at', 'desc');
     }
 
     /**
-     * 设置用户的名字
+     * 设置用户的名字.
      *
-     * @param  string  $value
+     * @param string $value
+     *
      * @return string
      */
     public function setContentAttribute($value)
@@ -43,7 +44,7 @@ class Page extends Model
     }
 
     /**
-     * 文章的标签
+     * 文章的标签.
      */
     public function tags()
     {
