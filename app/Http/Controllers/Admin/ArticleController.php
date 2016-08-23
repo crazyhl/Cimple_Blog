@@ -59,7 +59,7 @@ class ArticleController extends Controller
             'content'       => $request->input('content'),
             'isAllowCommet' => empty($request->isAllowCommet) ? 0 : 1,
             'isTop'         => empty($request->isTop) ? 0 : 1,
-            'order'         => $request->order,
+            'order'         => $request->order ?: 0,
             'status'        => $request->status,
             'type'          => 1,
         ]);
@@ -129,7 +129,7 @@ class ArticleController extends Controller
         $article->content = $request->input('content');
         $article->isAllowCommet = empty($request->isAllowCommet) ? 0 : 1;
         $article->isTop = empty($request->isTop) ? 0 : 1;
-        $article->order = $request->order;
+        $article->order = $request->order ?: 0;
         $article->status = $request->status;
         $article->save();
         DB::table('cate_page')->where('page_id', $article->id)->delete();
