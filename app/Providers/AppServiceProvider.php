@@ -25,7 +25,7 @@ class AppServiceProvider extends ServiceProvider
         }
         view()->share('option', $options);
         // 前台视图共享的数据
-        view()->composer(['index.index','index.article'],function($view){
+        view()->composer(['index.index', 'index.article'], function ($view) {
             $pages = Page::pages()->where('status', 1)->get();
             $view->with('pages', $pages);
             $cates = Cate::orderBy('order', 'desc')->get();

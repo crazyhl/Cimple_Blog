@@ -3,8 +3,6 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Michelf\MarkdownExtra;
-use Michelf\SmartyPants;
 
 class Page extends Model
 {

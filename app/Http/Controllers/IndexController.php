@@ -4,10 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Option;
 use App\Page;
-use Illuminate\Http\Request;
 
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
 
 class IndexController extends Controller
 {
@@ -21,6 +18,7 @@ class IndexController extends Controller
         $title = '首页';
         $perPage = Option::where('name', 'PER_PAGE')->value('value');
         $articles = Page::articles()->paginate($perPage);
+
         return view('index.index', compact('title', 'articles'));
     }
 }
