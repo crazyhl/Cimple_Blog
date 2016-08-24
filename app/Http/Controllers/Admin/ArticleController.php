@@ -75,18 +75,20 @@ class ArticleController extends Controller
         $tags = explode(',', $tags);
         foreach ($tags as $tag) {
             $tag = trim($tag);
-            $t = Tag::where('title', $tag)->first();
-            if ($t) {
-                $page->tags()->save($t);
-            } else {
-                $t = $page->tags()->create([
-                    'title' => $tag,
-                    'count' => 1,
-                ]);
+            if ($tag) {
+                $t = Tag::where('title', $tag)->first();
+                if ($t) {
+                    $page->tags()->save($t);
+                } else {
+                    $t = $page->tags()->create([
+                        'title' => $tag,
+                        'count' => 1,
+                    ]);
+                }
+                $tagCount = DB::table('page_tag')->where('tag_id', $t->id)->count();
+                $t->count = $tagCount;
+                $t->save();
             }
-            $tagCount = DB::table('page_tag')->where('tag_id', $t->id)->count();
-            $t->count = $tagCount;
-            $t->save();
         }
 
         return redirect(route('admin.article.index'));
@@ -147,18 +149,20 @@ class ArticleController extends Controller
         DB::table('page_tag')->where('page_id', $article->id)->delete();
         foreach ($tags as $tag) {
             $tag = trim($tag);
-            $t = Tag::where('title', $tag)->first();
-            if ($t) {
-                $article->tags()->save($t);
-            } else {
-                $t = $article->tags()->create([
-                    'title' => $tag,
-                    'count' => 1,
-                ]);
+            if ($tag) {
+                $t = Tag::where('title', $tag)->first();
+                if ($t) {
+                    $article->tags()->save($t);
+                } else {
+                    $t = $article->tags()->create([
+                        'title' => $tag,
+                        'count' => 1,
+                    ]);
+                }
+                $tagCount = DB::table('page_tag')->where('tag_id', $t->id)->count();
+                $t->count = $tagCount;
+                $t->save();
             }
-            $tagCount = DB::table('page_tag')->where('tag_id', $t->id)->count();
-            $t->count = $tagCount;
-            $t->save();
         }
 
         foreach ($oldCates as $oldCate) {

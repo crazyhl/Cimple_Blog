@@ -14,7 +14,7 @@ class AmazeuiThreePresenter extends \Illuminate\Pagination\BootstrapThreePresent
     {
         if ($this->hasPages()) {
             return sprintf(
-                '<ul class="am-pagination">%s %s %s</ul>',
+                '<ul class="am-pagination am-pagination-centered">%s %s %s</ul>',
                 $this->getPreviousButton(),
                 $this->getLinks(),
                 $this->getNextButton()

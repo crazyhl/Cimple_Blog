@@ -3,6 +3,8 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Michelf\MarkdownExtra;
+use Michelf\SmartyPants;
 
 class Page extends Model
 {
@@ -15,7 +17,7 @@ class Page extends Model
      */
     public function scopeArticles($query)
     {
-        return $query->where('type', 1)->orderBy('isTop', 'desc')->orderBy('updated_at', 'desc');
+        return $query->where('type', 1)->orderBy('isTop', 'desc')->orderBy('order', 'desc')->orderBy('updated_at', 'desc');
     }
 
     /**
