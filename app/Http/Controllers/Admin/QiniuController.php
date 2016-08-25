@@ -2,18 +2,16 @@
 
 namespace App\Http\Controllers\Admin;
 
-use Illuminate\Http\Request;
-
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Qiniu\Auth;
 
 class QiniuController extends Controller
 {
     /**
-     * 获取七牛token
+     * 获取七牛token.
      */
-    public function getToken() {
+    public function getToken()
+    {
         $accessKey = 'JxSeAXh6u94q-ZLaw6VxyGFldH0B5CoP3e0HzutY';
         $secretKey = 'h0CDrAatJspD8Fg4DUIioD-ZC-9aCv_yBvzhVMGp';
 
@@ -23,6 +21,7 @@ class QiniuController extends Controller
 
         // 生成上传Token
         $token = $auth->uploadToken($bucket);
+
         return ['uptoken' => $token];
     }
 }
