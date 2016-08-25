@@ -29,6 +29,9 @@
     </article>
     <hr class="am-article-divider blog-hr">
     @if($article->isAllowCommet == 1)
-        这里是评论
+        <div data-am-widget="duoshuo" class="am-duoshuo am-duoshuo-default" data-ds-short-name="h57">
+            <div class="ds-thread" >
+            </div>
+        </div>
     @endif
 @endsection

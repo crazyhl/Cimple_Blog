@@ -31,4 +31,5 @@ Route::group(['middleware' => 'auth', 'namespace' => 'Admin', 'prefix' => 'admin
     Route::resource('/page', 'PageController', ['except' => ['show']]); // 页面
     Route::get('/setting', 'SettingController@index'); // 设置页面
     Route::post('/setting', 'SettingController@store'); // 设置保存
+    Route::get('/qiniu/token', 'QiniuController@getToken');// 七牛上传
 });

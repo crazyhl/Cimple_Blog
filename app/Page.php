@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Page extends Model
 {
-    protected $fillable = ['title', 'description', 'content', 'type', 'status', 'order', 'isTop'];
+    protected $fillable = ['title', 'description', 'content', 'type', 'status', 'order', 'isTop', 'isAllowCommet'];
 
     /**
      * 查询所有的文章.

@@ -48,14 +48,17 @@ class PageController extends Controller
             'title'   => 'required|max:255',
             'content' => 'required',
         ]);
-        $page = Page::create([
+        $values = [
             'title'         => $request->title,
             'content'       => $request->input('content'),
             'isAllowCommet' => empty($request->isAllowCommet) ? 0 : 1,
+            'isTop'         => empty($request->isTop) ? 0 : 1,
             'order'         => $request->order ?: 0,
             'status'        => $request->status,
             'type'          => 2,
-        ]);
+        ];
+
+        $page = Page::create($values);
 
         return redirect(route('admin.page.index'));
     }
