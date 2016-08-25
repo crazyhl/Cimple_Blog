@@ -158,7 +158,7 @@
                         var domain = up.getOption('domain');
                         var res = JSON.parse(info);
                         var sourceLink = domain + res.key; //获取上传成功后的文件的Url
-                        resultArea.text(resultArea.text() + sourceLink + "\n");
+                        resultArea.text(resultArea.text() + "![图片alt](" + sourceLink + ")\n");
                     },
                     'Error': function(up, err, errTip) {
                         //上传出错时，处理相关的事情
