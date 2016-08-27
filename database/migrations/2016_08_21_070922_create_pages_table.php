@@ -16,8 +16,8 @@ class CreatePagesTable extends Migration
         Schema::create('pages', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title'); // 标题
-            $table->string('description'); // 描述
-            $table->string('content'); // 内容
+            $table->text('description'); // 描述
+            $table->text('content'); // 内容
             $table->unsignedInteger('type'); // 1 文章 2 页面
             $table->unsignedTinyInteger('status'); // 状态 1 正常 0 草稿
             $table->unsignedInteger('order')->default(0);
