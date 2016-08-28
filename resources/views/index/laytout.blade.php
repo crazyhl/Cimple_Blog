@@ -80,8 +80,13 @@
 </div>
 
 <footer class="blog-footer">
-    <p>blog template<br/>
-        <small>© Copyright XXX. by the AmazeUI Team.</small>
+    <p>{{$option['TITLE']}}}<br/>
+        <small>
+            © Copyright 2016. by the Cimple.
+            @if($option['BN_NO'])
+                | <a href="http://www.miibeian.gov.cn" target="_blank">{{$option['BN_NO']}}</a>
+            @endif
+        </small>
     </p>
 </footer>
 
