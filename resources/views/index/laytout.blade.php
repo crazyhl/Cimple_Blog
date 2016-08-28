@@ -80,7 +80,7 @@
 </div>
 
 <footer class="blog-footer">
-    <p>{{$option['TITLE']}}}<br/>
+    <p>{{$option['TITLE']}}<br/>
         <small>
             © Copyright 2016. by the Cimple.
             @if($option['BN_NO'])
