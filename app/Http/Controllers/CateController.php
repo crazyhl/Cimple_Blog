@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Option;
 
-
 class CateController extends Controller
 {
     /**

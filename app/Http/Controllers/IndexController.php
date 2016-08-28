@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Option;
 use App\Page;
 
-
 class IndexController extends Controller
 {
     /**
