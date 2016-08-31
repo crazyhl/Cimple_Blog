@@ -77,7 +77,7 @@
             <div class="am-cf">
                 共 {{$articles->total()}} 条记录
                 <div class="am-fr">
-                    {!! $articles->render(new \App\AmazeuiThreePresenter($articles)) !!}
+                    {!! $articles->render() !!}
                 </div>
             </div>
         </div>

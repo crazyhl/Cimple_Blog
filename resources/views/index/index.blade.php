@@ -29,5 +29,5 @@
         </article>
         <hr class="am-article-divider blog-hr">
     @endforeach
-    {!! $articles->render(new \App\AmazeuiThreePresenter($articles)) !!}
+    {!! $articles->render() !!}
 @endsection

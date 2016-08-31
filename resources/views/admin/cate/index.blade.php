@@ -63,7 +63,7 @@
             <div class="am-cf">
                 共 {{$cates->total()}} 条记录
                 <div class="am-fr">
-                    {!! $cates->render(new \App\AmazeuiThreePresenter($cates)) !!}
+                    {!! $cates->render() !!}
                 </div>
             </div>
         </div>

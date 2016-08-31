@@ -2,10 +2,12 @@
 
 namespace App\Providers;
 
+use App\AmazeuiThreePresenter;
 use App\Cate;
 use App\Option;
 use App\Page;
 use App\Tag;
+use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -34,6 +36,10 @@ class AppServiceProvider extends ServiceProvider
             $view->with('tags', $tags);
             $lastestArticle = Page::articles()->take(10)->get();
             $view->with('lastestArticle', $lastestArticle);
+        });
+        // 设定分页主题
+        LengthAwarePaginator::presenter(function ($paginator) {
+            return new AmazeuiThreePresenter($paginator);
         });
     }
 
