@@ -16,7 +16,7 @@ class IndexController extends Controller
     {
         $title = '首页';
         $perPage = Option::where('name', 'PER_PAGE')->value('value');
-        $articles = Page::articles()->paginate($perPage);
+        $articles = Page::articles()->where('status', 1)->paginate($perPage);
 
         return view('index.index', compact('title', 'articles'));
     }
