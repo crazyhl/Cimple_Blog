@@ -34,7 +34,7 @@ class AppServiceProvider extends ServiceProvider
             $view->with('cates', $cates);
             $tags = Tag::all();
             $view->with('tags', $tags);
-            $lastestArticle = Page::articles()->take(10)->get();
+            $lastestArticle = Page::articles()->where('status', 1)->take(10)->get();
             $view->with('lastestArticle', $lastestArticle);
         });
         // 设定分页主题

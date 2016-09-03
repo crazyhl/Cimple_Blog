@@ -17,7 +17,7 @@ class TagController extends Controller
     {
         $title = $tag->title;
         $perPage = Option::where('name', 'PER_PAGE')->value('value');
-        $articles = $tag->articles()->where('status', 1)->where('type', 1)->orderBy('isTop', 'desc')->orderBy('order', 'desc')->orderBy('updated_at', 'desc')->paginate($perPage);
+        $articles = $tag->articles()->articles()->where('status', 1)->paginate($perPage);
 
         return view('index.index', compact('title', 'articles'));
     }
