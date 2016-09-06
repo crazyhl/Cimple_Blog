@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Link;
 use App\Option;
 use Illuminate\Http\Request;
-
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
 
 class LinkController extends Controller
 {
@@ -50,12 +48,12 @@ class LinkController extends Controller
         //
         $this->validate($request, [
             'title' => 'required|max:255',
-            'url' => 'required|max:255',
+            'url'   => 'required|max:255',
         ]);
         Link::create([
             'title'       => $request->title,
             'description' => $request->description,
-            'url'       => $request->url,
+            'url'         => $request->url,
         ]);
 
         return redirect(route('admin.link.index'));
@@ -87,7 +85,7 @@ class LinkController extends Controller
     {
         $this->validate($request, [
             'title' => 'required|max:255',
-            'url' => 'required|max:255',
+            'url'   => 'required|max:255',
         ]);
         $link->title = $request->title;
         $link->description = $request->description;
