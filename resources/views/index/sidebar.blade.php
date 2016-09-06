@@ -27,5 +27,15 @@
                 </p>
             </div>
         </section>
+        @if(count($links) != 0)
+        <section class="am-panel am-panel-default">
+            <div class="am-panel-hd">链接</div>
+            <ul class="am-list blog-list">
+                @foreach($links as $link)
+                    <li><a href="{{$link->url}}" title="{{$link->description or ''}}">{{$article->title}}</a></li>
+                @endforeach
+            </ul>
+        </section>
+        @endif
     </div>
 </div>

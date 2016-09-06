@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\AmazeuiThreePresenter;
 use App\Cate;
+use App\Link;
 use App\Option;
 use App\Page;
 use App\Tag;
@@ -36,6 +37,8 @@ class AppServiceProvider extends ServiceProvider
             $view->with('tags', $tags);
             $lastestArticle = Page::articles()->where('status', 1)->take(10)->get();
             $view->with('lastestArticle', $lastestArticle);
+            $links = Link::orderBy('id', 'desc')->get();
+            $view->with('links', $links);
         });
         // 设定分页主题
         LengthAwarePaginator::presenter(function ($paginator) {

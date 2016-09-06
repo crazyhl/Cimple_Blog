@@ -32,6 +32,7 @@ class RouteServiceProvider extends ServiceProvider
         $router->model('article', 'App\Page');
         $router->model('page', 'App\Page');
         $router->model('tag', 'App\Tag');
+        $router->model('link', 'App\Link');
     }
 
     /**
