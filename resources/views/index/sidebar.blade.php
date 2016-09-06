@@ -32,7 +32,7 @@
             <div class="am-panel-hd">链接</div>
             <ul class="am-list blog-list">
                 @foreach($links as $link)
-                    <li><a href="{{$link->url}}" title="{{$link->description or ''}}">{{$article->title}}</a></li>
+                    <li><a href="{{$link->url}}" title="{{$link->description or ''}}" target="_blank">{{$link->title}}</a></li>
                 @endforeach
             </ul>
         </section>
