@@ -10,6 +10,7 @@
     <meta name="renderer" content="webkit">
     <meta http-equiv="Cache-Control" content="no-siteapp"/>
     <link rel="stylesheet" href="{{asset('/css/amazeui.min.css')}}"/>
+    <link rel="alternate icon" type="image/png" href="/i/favicon.png">
     <style>
         @media only screen and (min-width: 1200px) {
             .blog-g-fixed {
