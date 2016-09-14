@@ -29,9 +29,9 @@
     </article>
     <hr class="am-article-divider blog-hr">
     @if($article->isAllowCommet == 1)
-        <!-- <div data-am-widget="duoshuo" class="am-duoshuo am-duoshuo-default" data-ds-short-name="h57">
+        <div data-am-widget="duoshuo" class="am-duoshuo am-duoshuo-default" data-ds-short-name="h57">
             <div class="ds-thread" >
             </div>
-        </div> -->
+        </div>
     @endif
 @endsection
