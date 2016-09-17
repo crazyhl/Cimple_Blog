@@ -87,6 +87,9 @@
             @if($option['BN_NO'])
                 | <a href="http://www.miibeian.gov.cn" target="_blank">{{$option['BN_NO']}}</a>
             @endif
+            @if($option['STATISTICS'])
+                {!! $option['STATISTICS'] !!}
+            @endif
         </small>
     </p>
 </footer>

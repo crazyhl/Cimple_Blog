@@ -95,6 +95,17 @@ class SettingController extends Controller
             ]);
         }
 
+        $statistics = Option::where('name', 'STATISTICS')->first();
+        if ($statistics) {
+            $statistics->value = $request->input('STATISTICS');
+            $statistics->save();
+        } else {
+            Option::create([
+                'name'  => 'STATISTICS',
+                'value' => $request->input('STATISTICS'),
+            ]);
+        }
+
         return redirect(url('/admin/setting'));
     }
 }

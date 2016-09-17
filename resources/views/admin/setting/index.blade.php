@@ -28,6 +28,10 @@
                 <label for="doc-bnno-email-1">备案号</label>
                 <input type="text" class="" name="BN_NO" id="doc-bnno-email-1" placeholder="备案号" value="{{$option['BN_NO'] or ''}}">
             </div>
+            <div class="am-form-group">
+                <label for="doc-bnno-email-1">统计代码</label>
+                <input type="text" class="" name="STATISTICS" id="doc-bnno-email-1" placeholder="统计代码" value="{{$option['STATISTICS'] or ''}}">
+            </div>
             {{csrf_field()}}
             <p><button type="submit" class="am-btn am-btn-default">提交</button></p>
         </fieldset>
