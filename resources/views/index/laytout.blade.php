@@ -11,6 +11,7 @@
     <meta http-equiv="Cache-Control" content="no-siteapp"/>
     <link rel="stylesheet" href="{{asset('/css/amazeui.min.css')}}"/>
     <link rel="alternate icon" type="image/png" href="/i/favicon.png">
+    <link href="//cdn.bootcss.com/highlight.js/9.6.0/styles/tomorrow-night.min.css" rel="stylesheet">
     <style>
         @media only screen and (min-width: 1200px) {
             .blog-g-fixed {
@@ -105,6 +106,8 @@
 <!--<![endif]-->
 <script src="{{asset('/js/amazeui.min.js')}}"></script>
 <script src="{{asset('/js/app.js')}}"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.6.0/highlight.min.js"></script>
+<script >hljs.initHighlightingOnLoad();</script>
 @yield('script')
 
 </body>
